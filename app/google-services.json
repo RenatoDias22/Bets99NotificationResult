@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "991535796329",
+    "firebase_url": "https://bets99-notification-result.firebaseio.com",
+    "project_id": "bets99-notification-result",
+    "storage_bucket": "bets99-notification-result.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991535796329:android:0aa4de0054b5f15b",
+        "android_client_info": {
+          "package_name": "com.example.renatodias.bets99notificationresult"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991535796329-d24335m4ibfshnbg955vhcgbkl79j2qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcXPgF6PKLymkaBegMuzhW0hZRGLB8FAA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

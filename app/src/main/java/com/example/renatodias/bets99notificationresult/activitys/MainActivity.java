@@ -44,14 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        progress = (ProgressBar) findViewById(R.id.secondBar);
-//        progress.setVisibility(View.VISIBLE);
-//        this.request();
-//        try {
-//            Thread.sleep(4000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
         this.Create();
     }
 
@@ -68,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new JogosAdapter();
+        adapter = new JogosAdapter(this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -101,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 JogoResponse matches = gson.fromJson(stringJson, JogoResponse.class);
                 GlobalJogo.resultadosPendentes = matches.getMatches();
-//                recyclerView.setVisibility(View.VISIBLE);
-//                progress.setVisibility(View.GONE);
+
                 adapter.notifyDataSetChanged();
 
             } else

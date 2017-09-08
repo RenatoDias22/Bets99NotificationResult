@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.renatodias.bets99notificationresult.activitys.PartidaActivity">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="368dp"
+        android:layout_height="130dp"
+        android:id="@+id/card_view_partidas"
+        android:layout_margin="16dp"
+        card_view:cardBackgroundColor="#f2f2f2"
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="5dp"
+        card_view:contentPadding="4dp"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/item_image_borda"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/frame"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_marginTop="2dp">
+
+
+            <TextView
+                android:id="@+id/data_jogo_partida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:maxLines="1"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="21/08/2017 21:00"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_time_casa_partida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/data_jogo_partida"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="middle"
+                android:paddingTop="4dp"
+                android:text="Palmeiras"
+                android:layout_marginTop="12dp"
+                android:textColor="#c1903c"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_x_partida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:paddingTop="4dp"
+                android:text=" X "
+                android:textAllCaps="true"
+                android:layout_below="@id/item_time_casa_partida"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_time_Fora_partida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:ellipsize="end"
+                android:paddingTop="4dp"
+                android:textColor="#c1903c"
+                android:text="Corinthians"
+                android:layout_below="@id/item_x_partida"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="368dp"
+        android:layout_height="80dp"
+        android:id="@+id/card_view_partidas_2"
+        android:layout_margin="16dp"
+        card_view:cardBackgroundColor="#f2f2f2"
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="5dp"
+        card_view:contentPadding="4dp"
+        android:layout_below="@id/card_view_partidas"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/item_image_borda2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/frame"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/primeiro_tempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@+id/valor_primeiro_tempo"
+                android:gravity="end"
+                android:ellipsize="end"
+                android:paddingTop="2dp"
+                android:text="Primeiro Tempo: "
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/valor_primeiro_tempo"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-14dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:inputType="text"
+                android:hint="0:0"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/segundo_tempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@+id/valor_primeiro_tempo"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/primeiro_tempo"
+                android:gravity="end"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
+                android:text="Segundo Tempo: "
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/valor_segundo_tempo"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_below="@id/primeiro_tempo"
+                android:inputType="text"
+                android:layout_marginTop="5dp"
+                android:hint="0:0"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/pesquisar_partida"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_view_partidas_2"
+        android:text="Pesquisar Resultado"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mybutton"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:onClick="PesquisarPartida"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pesquisar_partida"
+        android:text="Salvar"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mybutton"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:onClick="buttonOk"/>
+
+</RelativeLayout>

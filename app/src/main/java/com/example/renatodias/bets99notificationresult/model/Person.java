@@ -6,7 +6,7 @@ package com.example.renatodias.bets99notificationresult.model;
 
 public class Person {
 
-    int id;
+    String id;
     String resultadoJogo;
 
 
@@ -20,11 +20,11 @@ public class Person {
         return resultadoJogo;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }

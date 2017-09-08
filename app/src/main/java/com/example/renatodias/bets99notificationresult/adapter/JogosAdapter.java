@@ -1,6 +1,8 @@
 package com.example.renatodias.bets99notificationresult.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +29,8 @@ import android.widget.EditText;
 
 import com.example.renatodias.bets99notificationresult.Global.GlobalJogo;
 import com.example.renatodias.bets99notificationresult.activitys.MainActivity;
+import com.example.renatodias.bets99notificationresult.activitys.PartidaActivity;
+import com.example.renatodias.bets99notificationresult.activitys.Splash;
 import com.example.renatodias.bets99notificationresult.model.Jogo;
 import com.example.renatodias.bets99notificationresult.R;
 import com.example.renatodias.bets99notificationresult.model.JogoResponse;
@@ -38,14 +42,18 @@ import com.example.renatodias.bets99notificationresult.model.Person;
 
 public class JogosAdapter extends  RecyclerView.Adapter<JogosAdapter.ViewHolder> {
 
+    public static Context contextAdapter;
+
+    public JogosAdapter(Context context){
+        this.setContext(context);
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView itemTimecasa;
         public TextView itemTimeFora;
         public TextView dataJogo;
-        public EditText resultadoJogo;
         public TextView idJogo;
-        public Button ok;
 
         public ViewHolder(final View itemView) {
             super(itemView);
@@ -53,26 +61,28 @@ public class JogosAdapter extends  RecyclerView.Adapter<JogosAdapter.ViewHolder>
             itemTimecasa  = (TextView)itemView.findViewById(R.id.item_time_casa);
             itemTimeFora = (TextView) itemView.findViewById(R.id.item_time_Fora);
             dataJogo = (TextView) itemView.findViewById(R.id.data_jogo);
-            dataJogo = (TextView) itemView.findViewById(R.id.data_jogo);
             idJogo = (TextView) itemView.findViewById(R.id.id_matche);
-//            pais = (ImageView) itemView.findViewById(R.id.image_pais);
-//            resultadoJogo = (EditText) itemView.findViewById(R.id.edit_text_partida);
-//            ok = (Button) itemView.findViewById(R.id.button_ok);
 
-//            ok.setOnClickListener(new View.OnClickListener() {
-//                @Override public void onClick(View v) {
-////                    int position = getAdapterPosition();
-//                    if(!validate())
-//                    // call AsynTask to perform network operation on separate thread
-//                    new HttpAsyncTask().execute("http://hmkcode.appspot.com/jsonservlet");
-//
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    Intent intent = new Intent(getContext(),PartidaActivity.class);
+
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("id", (String) idJogo.getText());
+                    bundle.putString("casa", (String) itemTimecasa.getText());
+                    bundle.putString("fora", (String) itemTimeFora.getText());
+                    bundle.putString("data", (String) dataJogo.getText());
+                    intent.putExtras(bundle);
+
+                    getContext().startActivity(intent);
+                }
+            });
         }
 
-        public String getResultadoJogo() {
-            return resultadoJogo.getText().toString();
-        }
+//        public String getResultadoJogo() {
+//            return resultadoJogo.getText().toString();
+//        }
 
 //        private class HttpAsyncTask extends AsyncTask<String, Void, String> {
 //            @Override
@@ -178,5 +188,13 @@ public class JogosAdapter extends  RecyclerView.Adapter<JogosAdapter.ViewHolder>
     @Override
     public int getItemCount() {
         return GlobalJogo.resultadosPendentes.size();
+    }
+
+    public void setContext(Context context) {
+        this.contextAdapter = context;
+    }
+
+    public Context getContext() {
+        return contextAdapter;
     }
 }
